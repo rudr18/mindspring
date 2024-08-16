@@ -16,7 +16,9 @@ After this, in `app.py`, which is a Flask Python script, load the model using th
 from tensorflow.keras.models import load_model
 ```
 
-Also, make a folder named uploads where all the uploaded disease images will be stored. 
+Also, make a folder named uploads where all the uploaded disease images will be stored.
+
+Create  a `templates` folder where `index.html` will be stored.
 
 After completing these steps, run the script with the following command:
 
