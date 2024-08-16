@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #39FF14; /* Neon green color */
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #39FF14; /* Neon green color */
+            color: #111;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #32c532; /* Slightly darker neon green */
+        }
+        .result {
+            margin: 20px 0;
+        }
+        .uploaded-image {
+            margin: 20px 0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #39FF14; /* Neon green border */
+            border-radius: 10px;
+        }
+        .disease {
+            color: #FF007F; /* Neon pink color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>MindSpring</h1>
+    <h2>(Skin Disease)<h2></h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if uploaded_image_url %}
+        <div class="uploaded-image">
+            <img src="{{ url_for('uploaded_file', filename=uploaded_image_url) }}" alt="Uploaded Image">
+        </div>
+        {% if predicted_disease %}
+            <div class="result">
+                <p>Predicted Disease: <span class="disease">{{ predicted_disease }}</span></p>
+                <!-- <p>Confidence: {{ (confidence * 100)|round(2) }}%</p> -->
+            </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
