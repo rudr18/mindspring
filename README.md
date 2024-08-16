@@ -8,7 +8,7 @@ The dataset used for training the model is a large collection of skin disease im
 
 After downloading the dataset, extract it to a directory of your choice. This directory will be used as the `data_dir` in the model training script.
 
-Run `modelScript.py` to train the model `mindspring.h5`.
+Run `modelScript.py` to train the model `skin_mindspring.h5`.
 
 After this, in `app.py`, which is a Flask Python script, load the model using the following command:
 
