@@ -18,7 +18,7 @@ from tensorflow.keras.models import load_model
 
 Also, make a folder named uploads where all the uploaded disease images will be stored.
 
-Create  a `templates` folder where `index.html` will be stored.
+Create  a `templates` folder where the `index.html` will be stored.
 
 After completing these steps, run the script with the following command:
 
